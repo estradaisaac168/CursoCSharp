@@ -90,11 +90,26 @@ namespace Curso_de_C_.Seccion11
                     }
                     else
                     {
-                        //
-                        Console.WriteLine("Seleccione un directorio valido no un archivo");
-                        Console.WriteLine("Presiona cualquier tecla para continuar");
+                        /*
+                         * MENU
+                         * 
+                         * Copiar
+                         * Mover
+                         * Eliminar
+                         * Renombrar
+                         */
 
-                        Console.ReadKey();
+                        //En el else -if que nos permite escoger un numero de índice, 
+                        //vamos a permitir que al escoger un archivo se nos muestre un menú
+                        //con las opciones mencionadas anteriormente, 
+                        //esto reemplazará el mensaje de “selecciona un directorio, no un archivo”.
+
+                        OperacionesArchivos(archivosSubdirectorios[opcionEscogida]);
+
+                        //Console.WriteLine("Seleccione un directorio valido no un archivo");
+                        //Console.WriteLine("Presiona cualquier tecla para continuar");
+
+                        //Console.ReadKey();
                     }
                 }
                 else
@@ -102,6 +117,164 @@ namespace Curso_de_C_.Seccion11
                     Console.WriteLine("Ingrese una opcion valida, 'a' para regresar, 's' para salir, 'n' para nueva ruta");
                 }
             }
+        }
+
+        private static void OperacionesArchivos(string archivo)
+        {
+
+            string nombreArchivo, rutaCopiarArchivo, rutaMoverArchivo, destinoArchivo, respuestaReemplazo, respuestaEliminar, respuestaRenombrar, nuevoNombreArchivo, rutaArchivoRenombrado, rutaArchivo;
+
+            nombreArchivo = Path.GetFileName(archivo);
+            rutaArchivo = archivo;
+
+            Console.Clear();
+
+            Console.WriteLine($"Seleccionaste el archivo: [{nombreArchivo}]");
+
+            Console.WriteLine("\nOpciones disponibles para los archivos: ");
+            Console.WriteLine("\n1 - Copiar archivo");
+            Console.WriteLine("2 - Mover archivo");
+            Console.WriteLine("3 - Eliminar archivo");
+            Console.WriteLine("4 - Renombrar archivo");
+            Console.WriteLine("5 - Salir");
+
+            Console.Write("Que opcion deceas realizar?? ");
+            int opcion = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine($"Nombre del archivo seleccionado: {nombreArchivo}");
+
+            switch (opcion)
+            {
+                case 1:
+                    Console.WriteLine("Ingrese la ruta donde decea - Copiar archivo");
+                    rutaCopiarArchivo = Console.ReadLine();
+
+                    if (Directory.Exists(rutaCopiarArchivo))
+                    {
+                        destinoArchivo = Path.Combine(rutaCopiarArchivo, nombreArchivo);
+
+                        if (!File.Exists(destinoArchivo))
+                        {
+                            File.Copy(rutaArchivo, destinoArchivo);
+
+                            MensajeExito("Copiado");
+                        }
+                        else
+                        {
+                            Console.Write($"\nEl archivo [{nombreArchivo}] ya existe en la ruta de destino: Deseas reemplazarlo? (s/n)");
+                            respuestaReemplazo = Console.ReadLine();
+
+                            if (respuestaReemplazo.ToLower() == "s")
+                            {
+                                File.Copy(rutaArchivo, destinoArchivo, true); //True es sobre escribir e archivo
+
+
+                                MensajeExito("Reemplazado");
+                            }
+                            else
+                            {
+                                MensajeRutaNoValida();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MensajeRutaNoValida();
+                    }
+                    break;
+
+                case 2:
+                    Console.WriteLine("Ingrese la ruta donde decea - Mover el archivo");
+                    rutaMoverArchivo = Console.ReadLine();
+
+                    if (Directory.Exists(rutaMoverArchivo))
+                    {
+                        destinoArchivo = Path.Combine(rutaMoverArchivo, nombreArchivo);
+
+                        if (File.Exists(destinoArchivo))
+                        {
+                            File.Move(rutaArchivo, rutaMoverArchivo);
+
+                            MensajeExito("Movido");
+                        }
+                        else
+                        {
+                            Console.Write($"\nEl archivo [{nombreArchivo}] ya existe en la ruta de destino: Deseas reemplazarlo? (s/n)");
+                            respuestaReemplazo = Console.ReadLine();
+
+                            if (respuestaReemplazo.ToLower() == "s")
+                            {
+                                File.Delete(rutaArchivo);
+
+                                File.Move(rutaArchivo, rutaMoverArchivo);
+
+
+                                MensajeExito("Reemplazarlo");
+                            }
+                            else
+                            {
+                                MensajeRutaNoValida();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MensajeRutaNoValida();
+                    }
+                    break;
+
+                case 3:
+                    Console.Write($"\nEsta seguro de borrar el archivo? (s/n)");
+                    respuestaEliminar = Console.ReadLine();
+
+                    if (respuestaEliminar.ToLower() == "s")
+                    {
+                        File.Delete(rutaArchivo);
+
+                        MensajeExito("Borrado");
+                    }
+                    else
+                    {
+                        MensajeRutaNoValida();
+                    }
+                    break;
+
+                case 4:
+                    Console.Write($"\nIngrese el nuevo nombre del archivo (con extension)");
+                    nuevoNombreArchivo = Console.ReadLine();
+
+                    Console.Write($"\nEl nuevo nombre de [{nombreArchivo}] sera: [{nuevoNombreArchivo}] (s/n)");
+                    respuestaRenombrar = Console.ReadLine();
+
+                    if (respuestaRenombrar.ToLower() == "s")
+                    {
+                        rutaArchivoRenombrado = Path.Combine(Path.GetDirectoryName(rutaArchivo), nuevoNombreArchivo);
+
+                        File.Move(rutaArchivo, rutaArchivoRenombrado);
+
+                        MensajeExito("Renombrado");
+                    }
+                    else
+                    {
+                        MensajeRutaNoValida();
+                    }
+                    break;
+
+                case 5:
+                    Console.WriteLine("\n5 - Salir");
+                    Console.WriteLine("Presiona cualquier tecla para continuar");
+                    Console.ReadKey();
+                    break;
+
+                default:
+                    Console.WriteLine("\nSelecciona una opcion valida por favor o presiona salir para continuar");
+                    Console.WriteLine("Presiona cualquier tecla para continuar");
+                    Console.ReadKey();
+                    break;
+            }
+
+
+
         }
 
         static private void MostrarTabla(string[] archivosSubdirectorios)
@@ -130,6 +303,22 @@ namespace Curso_de_C_.Seccion11
             }
 
             Console.WriteLine();
+        }
+
+
+        static void MensajeRutaNoValida()
+        {
+            Console.WriteLine("Ingresa una ruta valida");
+            Console.WriteLine("Presiona cualquier tecla para continuar");
+            Console.ReadKey();
+        }
+
+        static void MensajeExito(string mensaje)
+        {
+
+            Console.WriteLine($"El archivo se ha {mensaje} con exito");
+            Console.WriteLine("Presiona cualquier tecla para continuar");
+            Console.ReadKey();
         }
     }
 }
