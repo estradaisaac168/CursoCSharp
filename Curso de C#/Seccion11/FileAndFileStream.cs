@@ -106,25 +106,25 @@ namespace Curso_de_C_.Seccion11
 
 
             #region "Copiar, Mover, Eliminar, Verificar si existe un file"
-            if (File.Exists("C:\\Users\\Isaac_Estrada\\Desktop\\testMoverFile.txt"))
-            {
-                Console.WriteLine("El archivo existe");
+            //if (File.Exists("C:\\Users\\Isaac_Estrada\\Desktop\\testMoverFile.txt"))
+            //{
+            //    Console.WriteLine("El archivo existe");
 
-                //string origenArchivo = "testMoverFile.txt";
-                //string destinoArchivo = "C:\\Users\\Isaac_Estrada\\Desktop\\testMoverFile.txt";
+            //    //string origenArchivo = "testMoverFile.txt";
+            //    //string destinoArchivo = "C:\\Users\\Isaac_Estrada\\Desktop\\testMoverFile.txt";
 
-                //File.Copy(origenArchivo, destinoArchivo, true); //Copiar
-                //File.Move(origenArchivo, destinoArchivo); //mover
+            //    //File.Copy(origenArchivo, destinoArchivo, true); //Copiar
+            //    //File.Move(origenArchivo, destinoArchivo); //mover
 
-                //Eliminar
-                //File.Delete("C:\\Users\\Isaac_Estrada\\Desktop\\testMoverFile.txt");
+            //    //Eliminar
+            //    //File.Delete("C:\\Users\\Isaac_Estrada\\Desktop\\testMoverFile.txt");
 
 
-            }
-            else
-            {
-                Console.WriteLine("No se encontro el archivo");
-            }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No se encontro el archivo");
+            //}
             #endregion
 
 
@@ -139,6 +139,151 @@ namespace Curso_de_C_.Seccion11
              * -> Delete
              * 
              */
+
+
+            //Crear un directorio -> con una subcarpeta
+            //Directory.CreateDirectory("MiSegundaCarpeta");
+            //Directory.CreateDirectory("MiSegundaCarpeta\\MiTerceraCarpeta");
+
+            //DirectoryInfo directoryInfo = Directory.CreateDirectory("MiCuartaCarpeta");
+
+            //Console.WriteLine($"Nombre: {directoryInfo.Name}");
+            //Console.WriteLine($"Ruta absoluta: {directoryInfo.FullName}");
+            //Console.WriteLine($"Fecha de creacion: {directoryInfo.CreationTime}");
+
+            //Console.ReadKey();
+
+            #endregion
+
+
+            #region "Uso  de @ para la secuencia de escape"
+            //Directory.CreateDirectory(@"C:\Users\Isaac_Estrada\Desktop\TestingDelete");
+
+            #endregion
+
+
+            #region "Mover, eliminar, saber si existe un directorio"
+            //string origen = "C:\\Users\\isaac\\Source\\Repos\\estradaisaac168\\CursoCSharp\\Curso de C#\\bin\\Debug\\MiSegundaCarpeta\\MiTerceraCarpeta";
+            //string destino = "C:\\Users\\isaac\\Source\\Repos\\estradaisaac168\\CursoCSharp\\Curso de C#\\bin\\Debug\\MiTerceraCarpeta";
+
+            //Mover
+            //if (Directory.Exists(origen))
+            //{
+            //    Console.WriteLine("Existe el directorio");
+
+            //    //Mover un directorio
+            //    if (!Directory.Exists(destino))
+            //    {
+            //        Directory.Move(origen, destino);
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("El directorio destino ya exite");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No Existe el directorio");
+            //}
+
+
+            //string directorio = "C:\\Users\\isaac\\Source\\Repos\\estradaisaac168\\CursoCSharp\\Curso de C#\\bin\\Debug\\MiTerceraCarpeta";
+
+
+            ////Borrar
+            //if (Directory.Exists(directorio))
+            //{
+            //    /*
+            //     * 
+            //     * True para eliminar carpeta mas contenido
+            //     * 
+            //     * False para eliminar solamente si esta vacia
+            //     * 
+            //     */
+
+            //    Directory.Delete(directorio, true);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No Existe el directorio");
+            //}
+            #endregion
+
+
+            #region "Nombre de todos los archivos"
+
+            //Matriz para almacenar todos los archivos
+
+            //string[] nombreArchivos;
+
+            //nombreArchivos = Directory.GetFiles("C:\\Users\\isaac\\Source\\Repos\\estradaisaac168\\CursoCSharp\\Curso de C#\\bin\\Debug");
+
+            //foreach (string item in nombreArchivos)
+            //{
+            //    Console.WriteLine(item);
+            //    Console.WriteLine(Path.GetFileName(item));
+            //}
+
+            #endregion
+
+
+            #region "Nombre de todos las carpetas"
+
+            ////Matriz para almacenar todos los archivos
+
+            //string[] nombreCarpetas;
+
+            //nombreCarpetas = Directory.GetDirectories("C:\\Users\\isaac\\Source\\Repos\\estradaisaac168\\CursoCSharp\\Curso de C#\\bin\\Debug");
+
+            //foreach (string item in nombreCarpetas)
+            //{
+            //    //Console.WriteLine(item);
+            //    Console.WriteLine(Path.GetFileName(item));
+            //}
+
+            #endregion
+
+
+            #region "Nombre de todos las carpetas y archivos"
+
+            //string ruta = "C:\\Users\\isaac\\Source\\Repos\\estradaisaac168\\CursoCSharp\\Curso de C#\\bin\\Debug";
+
+            //string[] archivosDirectorios = Directory.GetFileSystemEntries(ruta);
+
+            //foreach (string item in archivosDirectorios)
+            //{
+            //    //Console.WriteLine(item);
+            //    Console.WriteLine(Path.GetFileName(item));
+            //}
+
+            #endregion
+
+
+            #region "Conocer la extension"
+
+            //string ruta = "C:\\Users\\isaac\\Source\\Repos\\estradaisaac168\\CursoCSharp\\Curso de C#\\bin\\Debug\\Curso de C#.exe";
+
+            //string extension = Path.GetExtension(ruta);
+
+            //Console.WriteLine(extension);
+
+            #endregion
+
+
+            #region "Combinar la extension"
+
+            string rutaBase = "C:\\Users\\isaac\\Source\\Repos\\estradaisaac168\\CursoCSharp\\Curso de C#\\bin\\Debug";
+
+            string rutaCompleta;
+
+            Console.WriteLine("Ingrese nombre de la carpeta");
+            string nombreDirectorio = Console.ReadLine();
+
+            rutaCompleta = Path.Combine(rutaBase, nombreDirectorio);
+
+            Directory.CreateDirectory(rutaCompleta);
+
+            Console.WriteLine($"Se creo el directorio en: {rutaCompleta}");
 
             #endregion
 
@@ -176,7 +321,7 @@ namespace Curso_de_C_.Seccion11
 
             byte[] bufferLeerArchivo = new byte[1024];
 
-            fileStream.Read(bufferLeerArchivo, 0 , bufferLeerArchivo.Length);
+            fileStream.Read(bufferLeerArchivo, 0, bufferLeerArchivo.Length);
 
             string cadenaDecodificada = Encoding.UTF8.GetString(bufferLeerArchivo);
 
