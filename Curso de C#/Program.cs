@@ -1,4 +1,4 @@
-﻿using Curso_de_C_.Seccion11;
+﻿using Curso_de_C_.Seccion12;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +21,12 @@ namespace Curso_de_C_
             //ejercicioUno.Init();
             //#endregion
 
+            //Introduccion introduccion = new Introduccion();
+            //introduccion.Init();
+            #endregion
+
+
+            #region "Seccion12"
             Introduccion introduccion = new Introduccion();
             introduccion.Init();
             #endregion

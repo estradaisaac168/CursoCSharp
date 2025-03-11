@@ -51,6 +51,7 @@
     <Compile Include="Seccion11\FileAndFileStream.cs" />
     <Compile Include="Seccion11\FlujosArchivos.cs" />
     <Compile Include="Seccion11\Introduccion.cs" />
+    <Compile Include="Seccion12\Introduccion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
