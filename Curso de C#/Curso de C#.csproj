@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seccion11\AlgoritmoRecursivo.cs" />
+    <Compile Include="Seccion11\EjercicioDos.cs" />
     <Compile Include="Seccion11\EjercicioUno.cs" />
     <Compile Include="Seccion11\FileAndFileStream.cs" />
     <Compile Include="Seccion11\FlujosArchivos.cs" />

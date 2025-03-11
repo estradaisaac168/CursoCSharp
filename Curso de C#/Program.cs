@@ -21,10 +21,8 @@ namespace Curso_de_C_
             //ejercicioUno.Init();
             //#endregion
 
-            FileAndFileStream fileStream = new FileAndFileStream();
-            fileStream.Init();
-
-
+            Introduccion introduccion = new Introduccion();
+            introduccion.Init();
             #endregion
 
         }

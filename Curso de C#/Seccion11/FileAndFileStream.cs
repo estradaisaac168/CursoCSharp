@@ -42,7 +42,7 @@ namespace Curso_de_C_.Seccion11
         {
             //CrearArchivo();
             //LeerArchivo();
-            UsoDeFile();
+            //UsoDeFile();
         }
 
 
@@ -270,7 +270,7 @@ namespace Curso_de_C_.Seccion11
             #endregion
 
 
-            #region "Combinar la extension"
+            #region "Combinar la rutas"
 
             string rutaBase = "C:\\Users\\isaac\\Source\\Repos\\estradaisaac168\\CursoCSharp\\Curso de C#\\bin\\Debug";
 

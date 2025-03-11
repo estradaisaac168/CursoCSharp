@@ -41,5 +41,21 @@ namespace Curso_de_C_.Seccion11
          */
 
 
+        public void Init() {
+            //FileAndFileStream fileAndFileStream = new FileAndFileStream();
+            //fileAndFileStream.Init();
+
+            //AlgoritmoRecursivo algoritmo = new AlgoritmoRecursivo();
+            //algoritmo.Init();
+
+            //EjercicioUno ejercicioUno = new EjercicioUno();
+            //ejercicioUno.Init();
+
+            EjercicioDos ejercicioDos = new EjercicioDos();
+            ejercicioDos.Init();
+
+        }
+
+
     }
 }
