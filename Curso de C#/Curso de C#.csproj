@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,6 +45,11 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seccion10\BibliotecaEstructuras.cs" />
+    <Compile Include="Seccion10\EjerciciosEstructura.cs" />
+    <Compile Include="Seccion10\Introduccion.cs" />
+    <Compile Include="Seccion10\MatricesEstructuraInnerEstructuras.cs" />
+    <Compile Include="Seccion10\MatricesEstructuras.cs" />
     <Compile Include="Seccion11\AlgoritmoRecursivo.cs" />
     <Compile Include="Seccion11\EjercicioDos.cs" />
     <Compile Include="Seccion11\EjercicioUno.cs" />
@@ -52,21 +57,42 @@
     <Compile Include="Seccion11\FlujosArchivos.cs" />
     <Compile Include="Seccion11\Introduccion.cs" />
     <Compile Include="Seccion12\Introduccion.cs" />
+    <Compile Include="Seccion4\Ejercicio Do While.cs" />
+    <Compile Include="Seccion4\Ejercicio While.cs" />
+    <Compile Include="Seccion4\EjerciciosSeccion4.cs" />
+    <Compile Include="Seccion4\IteracionAnidadas.cs" />
+    <Compile Include="Seccion4\Segundo ejercicio para for.cs" />
+    <Compile Include="Seccion4\Uso del Do While.cs" />
+    <Compile Include="Seccion4\Uso del While.cs" />
+    <Compile Include="Seccion5\EjercicioDosMetodos.cs" />
+    <Compile Include="Seccion5\EjercicioUnoMetodos.cs" />
+    <Compile Include="Seccion5\Metodos.cs" />
+    <Compile Include="Seccion6\EjercicioUnoMatriz.cs" />
+    <Compile Include="Seccion6\Matrices.cs" />
+    <Compile Include="Seccion7\Automovil.cs" />
+    <Compile Include="Seccion7\Bank.cs" />
+    <Compile Include="Seccion7\Empleado.cs" />
+    <Compile Include="Seccion7\Introduccion.cs" />
+    <Compile Include="Seccion8\Colecciones.cs" />
+    <Compile Include="Seccion8\ColeccionGenericaList.cs" />
+    <Compile Include="Seccion8\Dictionary.cs" />
+    <Compile Include="Seccion8\EjercicioDosDictionary.cs" />
+    <Compile Include="Seccion8\EjercicioUnoConDictionary.cs" />
+    <Compile Include="Seccion8\EjercicioUnoListas.cs" />
+    <Compile Include="Seccion8\Introduccion.cs" />
+    <Compile Include="Seccion8\Queue.cs" />
+    <Compile Include="Seccion8\Stack.cs" />
+    <Compile Include="Seccion9\ClaseString.cs" />
+    <Compile Include="Seccion9\EjercicioConString.cs" />
+    <Compile Include="Seccion9\TareaUno.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Seccion10\" />
     <Folder Include="Seccion1\" />
     <Folder Include="Seccion2\" />
     <Folder Include="Seccion3\" />
-    <Folder Include="Seccion4\" />
-    <Folder Include="Seccion5\" />
-    <Folder Include="Seccion6\" />
-    <Folder Include="Seccion7\" />
-    <Folder Include="Seccion8\" />
-    <Folder Include="Seccion9\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
