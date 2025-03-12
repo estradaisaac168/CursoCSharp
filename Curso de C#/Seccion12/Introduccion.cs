@@ -43,6 +43,10 @@ namespace Curso_de_C_.Seccion12
             {
                 Console.WriteLine($"No se puede dividir un numero entre 0");
             }
+            finally // Todo lo que aparesca en este bloque se debe de ejecutar
+            {
+                Console.WriteLine("Operacion finalizada");
+            }
 
 
             resultado = a + b; //Suma
@@ -58,6 +62,13 @@ namespace Curso_de_C_.Seccion12
 
         public void Menu()
         {
+            /*
+             * FINALLY
+             * 
+             * Lo que este dentro de finally siempre se ejecuta
+             * 
+             */
+
             int opcion = 0;
 
             Console.WriteLine("Calculadora");
@@ -74,9 +85,20 @@ namespace Curso_de_C_.Seccion12
                 {
                     opcion = Convert.ToInt32(Console.ReadLine());
                 }
-                catch
+                catch(FormatException e)
                 {
                     Console.Write("\nSolo es posible ingresar numeros entre 1 y 2");
+
+                    opcion = 5;
+                }
+                catch(OverflowException e)
+                {
+                    Console.Write("\nEl numero es demasiado grande y Solo es posible ingresar numeros entre 1 y 2");
+
+                    opcion = 5;
+                }catch(Exception e)
+                {
+                    Console.Write("\nAlgo salio mal recuerda que Solo es posible ingresar numeros entre 1 y 2");
 
                     opcion = 5;
                 }
