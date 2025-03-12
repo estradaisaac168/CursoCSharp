@@ -15,8 +15,11 @@ namespace Curso_de_C_
         static void Main(string[] args)
         {
             #region "Seccion6"
-            MatrizBidimensional matriz = new MatrizBidimensional();
-            matriz.Init();
+            //MatrizBidimensional matriz = new MatrizBidimensional();
+            //matriz.Init();
+
+            MatrizEscalonada matrizEscalonada = new MatrizEscalonada();
+            matrizEscalonada.Init();
             #endregion
 
             #region "Seccion11"

@@ -79,6 +79,7 @@
     <Compile Include="Seccion6\EjercicioUnoMatriz.cs" />
     <Compile Include="Seccion6\Matrices.cs" />
     <Compile Include="Seccion6\MatrizBidimensional.cs" />
+    <Compile Include="Seccion6\MatrizEscalonada.cs" />
     <Compile Include="Seccion7\Automovil.cs" />
     <Compile Include="Seccion7\Bank.cs" />
     <Compile Include="Seccion7\Empleado.cs" />
