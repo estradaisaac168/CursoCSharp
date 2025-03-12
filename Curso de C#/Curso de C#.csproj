@@ -90,6 +90,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="POO\" />
     <Folder Include="Seccion1\" />
     <Folder Include="Seccion2\" />
     <Folder Include="Seccion3\" />
