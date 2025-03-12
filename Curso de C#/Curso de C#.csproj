@@ -75,8 +75,10 @@
     <Compile Include="Seccion5\EjercicioDosMetodos.cs" />
     <Compile Include="Seccion5\EjercicioUnoMetodos.cs" />
     <Compile Include="Seccion5\Metodos.cs" />
+    <Compile Include="Seccion6\EjercicioDosMatriz.cs" />
     <Compile Include="Seccion6\EjercicioUnoMatriz.cs" />
     <Compile Include="Seccion6\Matrices.cs" />
+    <Compile Include="Seccion6\MatrizBidimensional.cs" />
     <Compile Include="Seccion7\Automovil.cs" />
     <Compile Include="Seccion7\Bank.cs" />
     <Compile Include="Seccion7\Empleado.cs" />

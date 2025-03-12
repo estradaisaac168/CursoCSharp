@@ -1,6 +1,7 @@
 ﻿using Curso_de_C_.POO;
 using Curso_de_C_.ProyectoFinal;
 using Curso_de_C_.Seccion12;
+using Curso_de_C_.Seccion6;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,10 @@ namespace Curso_de_C_
     {
         static void Main(string[] args)
         {
-
+            #region "Seccion6"
+            MatrizBidimensional matriz = new MatrizBidimensional();
+            matriz.Init();
+            #endregion
 
             #region "Seccion11"
             //FlujosArchivos flujosArchivos = new FlujosArchivos();
@@ -41,8 +45,8 @@ namespace Curso_de_C_
 
 
             #region "Proyecto final"
-            IntroduccionJuego juego = new IntroduccionJuego();
-            juego.ComenzarJuego();
+            //IntroduccionJuego juego = new IntroduccionJuego();
+            //juego.ComenzarJuego();
             #endregion
 
         }
