@@ -1,4 +1,6 @@
-﻿using Curso_de_C_.Seccion12;
+﻿using Curso_de_C_.POO;
+using Curso_de_C_.ProyectoFinal;
+using Curso_de_C_.Seccion12;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,8 +29,20 @@ namespace Curso_de_C_
 
 
             #region "Seccion12"
-            Introduccion introduccion = new Introduccion();
-            introduccion.Init();
+            //Introduccion introduccion = new Introduccion();
+            //introduccion.Init();
+            #endregion
+
+
+            #region "Seccion POO"
+            //IntroduccionPOO introduccion = new IntroduccionPOO();
+            //introduccion.Init();
+            #endregion
+
+
+            #region "Proyecto final"
+            IntroduccionJuego juego = new IntroduccionJuego();
+            juego.ComenzarJuego();
             #endregion
 
         }
